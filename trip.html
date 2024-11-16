@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManageYourTrip</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form">
+        <div class="NameInput">
+            <p class="formfont">What your travel Name?</p>
+            <form action="">
+                <label for="tripname">:</label>
+                <input type="text" name="tripname" id="tripname">
+                <p id="outputname"></p>
+            </form>
+        </div>
+        
+        <div class="dateform">
+            <p class="formfont">What's your date?</p>
+            <ul>
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date">
+            </ul>
+
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date">
+        </div>
+
+        <h1>Speed</h1>
+        <div class="slidecontainer" id="SpeedBox">
+            <input type="range" min="2" max="4" value="3" step="1"class="slider" id="SpeedRange" name="SpeedRange" onmousemove="SpeedDisplaying()"><label for="SpeedRange" id="SpeedDisplaying">Medium</label>
+            <output id="SpeedValue"></output>
+        </div>
+
+        <h1>Style</h1>
+
+        <h3>Art</h1>
+        <div class="slidecontainer" id="ArtBox">
+            <input type="range" min="1" max="3" value="1" class="slider" id="ArtRange" name="ArtRange" onmousemove="ValueDisplaying(this.id)"><label for="ArtRange" id="ArtDisplaying">1</label>
+            <output id="ArtValue"></output>
+        </div>
+
+        <h3>History</h3>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="3" value="1" class="slider" id="HistoryRange" name="HistoryRange" onmousemove="ValueDisplaying(this.id)"><label for="HistoryRange" id="HistoryDisplaying">1</label>
+            <output id="HistoryValue"></output>
+        </div>
+
+        <h3>Nature</h3>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="3" value="1" class="slider" id="NatureRange" name="NatureRange" onmousemove="ValueDisplaying(this.id)"><label for="NatureRange" id="NatureDisplaying">1</label>
+            <output id="NatureValue"></output>
+        </div>
+
+        <h3>Shopping</h3>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="3" value="1" class="slider" id="ShoppingRange" name="ShoppingRange" onmousemove="ValueDisplaying(this.id)"><label for="ShoppingRange" id="ShoppingDisplaying">1</label>
+            <output id="ShoppingValue"></output>
+        </div>
+
+        <div class="submitbutton">
+            <button onclick="submitFunction()">submit</button>
+        </div>
+    </div>
+    <div style="background-image: url({API_URL});"></div>
+    <script>
+      </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps Directions API Example</title>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #googlemaps {
+        height: 100vh;
+        width: 100%;
+      }
+    </style>
+    <script src='https://maps.googleapis.com/maps/api/js?key={API_KEY}'></script>
+  </head>
+  <body>
+    <div id='googlemaps'></div>
+    <script>
+
+      const start = new google.maps.LatLng(13.7524938, 100.4935089);
+      const end = new google.maps.LatLng(13.7442236, 100.488571);
+
+      const map = new google.maps.Map(document.getElementById('googlemaps'), {
+        center: start,
+        zoom: 10,
+        styles: [
+        {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [
+          { color: '#b0e4ff' }
+        ]
+      }
+  ]
+      });
+      const startMarker = new google.maps.Marker({
+        position: start,
+        icon: {
+        url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        scaledSize: new google.maps.Size(50, 50)
+        },
+        map: map,
+      });
+      const endMarker = new google.maps.Marker({
+        position: end,
+        icon: {
+        url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        scaledSize: new google.maps.Size(50, 50)
+        },
+        map: map,
+      });
+
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      directionsRenderer.setMap(map);
+      const request = {
+        origin: start,
+        destination: end,
+        travelMode: 'WALKING',
+      };
+      directionsService.route(request, function (result, status) {
+        if (status == 'OK') {
+          directionsRenderer.setDirections(result);
+        }
+      });
+    </script>
+  </body>
+</html>
